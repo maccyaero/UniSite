@@ -8,6 +8,7 @@ Version: 1.0
     padding:0;
     margin:0;
 }
+body.logged-in{margin-top:20px;} 
 
 /* Whole header section including the banner and the navigation links */
 .header{
@@ -15,7 +16,7 @@ Version: 1.0
   position: fixed;
   width: 100%;
   color:white;
-  top:10px;
+  top:35px;
 }
 .banner{
     height: 400px;
@@ -29,6 +30,7 @@ Version: 1.0
     padding-top: 100px;
 }
 /* Nav Bar */
+
 .flex-container {
     display: flex;
     width:80%;
@@ -81,6 +83,9 @@ Version: 1.0
 a{
     text-decoration:none;
 }
+.header a{
+    color: white;
+}
 /* Banner */
 .banner{
     text-align: center;
@@ -112,6 +117,10 @@ a{
 .footer{
     background-color: aquamarine;
     height: 130px;
+    position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 
 }
 .about-col{
@@ -153,6 +162,21 @@ ul.breadcrumb {
     text-decoration: underline;
   }
 
+  .content{
+      display: flex;
+      justify-content:center;
+      margin-top: 20px;
+      width: 70%;
+      margin:20px auto;
+
+  }
+
+  .content-description{
+    flex:60%;
+    font-family:Roboto;
+    margin-right: 5px;;
+
+  }
 .menu{
       text-align: center;
       width: 200px;
@@ -167,4 +191,5 @@ ul.breadcrumb {
     padding:10px;
     color: white;
     background-color: tan;
+    list-style: none;
   }
