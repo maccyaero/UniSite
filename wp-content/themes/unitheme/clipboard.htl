@@ -1,0 +1,30 @@
+<div class="header">
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+        <div class="logo">
+            <h3>Fictional Uni</h3>
+        </div>
+        </div>
+        <div class="col-sm">
+        <div class="nav">
+            <ul>
+                <li>About us</li>
+                <li>Programs</li>
+                <li>Events</li>
+                <li>Campuses</li>
+                <li>Blog</li>
+                <li><a href="" class = "button green">Login</a></li>
+                <li><a href="" class="button red">Sign Up</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</div>
+    <div class="banner">
+        <h1>Welcome!</h1>
+        <h2>We think you'll like it here</h2>
+        <h3>Why dont you check out the mojhor you are interested in ?</h3>
+        <a href="" class="banner_button">Find your major</a>
+    </div>
+</div>
