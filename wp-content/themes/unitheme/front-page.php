@@ -23,6 +23,14 @@
                 while($homepageEvents->have_posts()){
                     $homepageEvents->the_post();?>
                     <a href="<?php the_permalink(); ?>"><?php the_title();?></a>
+                    <span> on <?php 
+                    $eventDate = new DateTime(get_field('event_date'));
+                    echo $eventDate->format('M');
+                    echo $eventDate->format('d');
+                    
+                    
+                    
+                    ?></span>
                     <p><?php echo wp_trim_words(get_the_content(), 25);?></p>
                <?php }
             
