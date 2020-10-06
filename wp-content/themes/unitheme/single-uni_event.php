@@ -10,8 +10,8 @@ while(have_posts()){
             </div>
             
              <ul class="breadcrumb">
-            <li><a href="<?php echo site_url('/blog') ;?>">Back to Blogs</a></li>
-            <li><?php the_author_link();?> on <?php the_time(Y) ?> in <?php the_category(', '); ?></li>
+            <li><a href="<?php echo site_url('/blog') ;?>">Back to Events Home</a></li>
+            <li><?php the_title();?></li>
 
             </ul>
 

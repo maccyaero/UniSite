@@ -2,8 +2,8 @@
 
 
 <div class="banner" style="background-image: url(images/hero-bg.png);">
-    <h1>Welcome to our blog.</h1>
-    <h2>Keep up with our latest news <!/h2>
+    <h1><?php the_archive_title(); ?></h1>
+    <h2><?php the_archive_description(); ?></h2>
 </div>
 <div class="">
     <?php 

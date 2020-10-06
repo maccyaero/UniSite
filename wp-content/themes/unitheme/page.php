@@ -2,7 +2,7 @@
     get_header();
         while(have_posts()){
             the_post();?>
-              <div class="banner">
+              <div class="banner" style="background-image: url(images/hero-bg.png);">
         <h1><?php the_title();?></h1>
         <h2>We think you'll like it here</h2>
         <h3>Why dont you check out the mojhor you are interested in ?</h3>
