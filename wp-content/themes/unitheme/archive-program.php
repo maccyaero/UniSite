@@ -3,7 +3,7 @@
 
 <div class="banner" style="background-image: url(images/hero-bg.png);">
     <h1><?php the_archive_title(); ?></h1>
-    <h2>Welcome to our world !</h2>
+    <h2>There is something for everyone have a look around</h2>
 </div>
 <div class="events_archive_content">
     <?php 
@@ -19,8 +19,5 @@
 
 
 ;?>
-<hr>
-<p>Looking for the past events? Visit our past events archive <a href="<?php echo site_url('/past-events') ?>">here</a></p>
-
 </div>
 <?php get_footer(); ?>
