@@ -10,12 +10,18 @@ add_action('wp_enqueue_scripts','university_files');
 
 function university_features(){
     add_theme_support('title-tag');
+    add_theme_support('post-thumbnails'); // To enable featured image in the post type 
+    add_image_size('professorLandscape', 400, 260, true);
+    add_image_size('professorPotrait', 480, 650, true);
+
+
 }
 add_action('after_setup_theme','university_features');
 
 
 function university_adjust_queries($query) //$query is the universal query object in WOrdpress
 {
+    //Manipulating Default Query for The Events Post Type to Order by event_date and only show Events happening in the future / Excluding Past Events.
     if(!is_admin() AND is_post_type_archive('event') AND $query->is_main_query()){
         $today = date('Ymd');
         $query -> set( 'meta_key', 'event_date');
@@ -28,7 +34,7 @@ function university_adjust_queries($query) //$query is the universal query objec
         'type' => 'numeric'
     ));
      }
-
+     //Manipulating Default Query for The Programs Post Type to Order by Title in Ascendinf Order and sho all Program Post Types  in one page 
      if(!is_admin() AND is_post_type_archive('program') AND $query->is_main_query()){
         $query -> set( 'orderby', 'title ');
         $query -> set( 'order', 'ASC');

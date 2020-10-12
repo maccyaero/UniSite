@@ -5,7 +5,7 @@
         <h1>Welcome!</h1>
         <h2>We think you'll like it here</h2>
         <h3>Why dont you check out the mojhor you are interested in ?</h3>
-        <a href="" class="button blue">Find your major</a>
+        <a href="<?php echo get_post_type_archive_link('program');?>" class="button blue">Find your major</a>
     </div>
 
     <div class="content_section">
