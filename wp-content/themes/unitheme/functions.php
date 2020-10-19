@@ -13,6 +13,7 @@ function university_features(){
     add_theme_support('post-thumbnails'); // To enable featured image in the post type 
     add_image_size('professorLandscape', 400, 260, true);
     add_image_size('professorPotrait', 480, 650, true);
+    add_image_size('pageBanner', 1500, 350, true);
 
 
 }
@@ -45,6 +46,15 @@ function university_adjust_queries($query) //$query is the universal query objec
 
 
 add_action('pre_get_posts','university_adjust_queries'); //When Wordpress querries the database based on the URL we want it to run the university_adjust_queries function so we can edit the default querry 
+
+function universityMapKey($api){
+
+    $api['key'] = 'AIzaSyB3eknowYrD6Ddjz00MRXG8YBAiUqGBkus';
+    return $api;
+}
+
+
+add_filter('acf/fields/google_map/api','universityMapKey');
 
 
 ?>

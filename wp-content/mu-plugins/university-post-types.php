@@ -2,6 +2,24 @@
 <?php
 function create_posttype() {
 
+  //Campus Post Type
+  register_post_type( 'campus',
+  array(
+    'supports' => array('title','editor','excerpt' ),
+    'labels' => array(
+      'name' => __( 'Campuses' ),
+      'singular_name' => __( 'Campus' ),
+      'add_new_item' => 'Add New Campus',
+      'edit_item' => 'Edit Campus',
+      'all_items' => "All Campuses"
+    ),
+    'public' => true,
+    'has_archive' => true,
+    'rewrite' => array('slug' => 'campuses'),
+    'menu_icon'=>'dashicons-location-alt'
+  )
+);
+
     //Event Post Type
     register_post_type( 'uni_event',
       array(

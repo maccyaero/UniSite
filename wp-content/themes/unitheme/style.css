@@ -19,7 +19,7 @@ color:white;
 top:35px;
 }
 .banner{
-  height: 400px;
+  height: 350px;
   background-image: url("images/library-hero.jpg");
   background-repeat: no-repeat;
   background-position: cover;
@@ -117,10 +117,10 @@ a{
 .footer{
   background-color: aquamarine;
   height: 130px;
-  /* position: fixed;
-left: 0;
-bottom: 0;
-width: 100%; */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+width: 100%; 
 
 }
 .about-col{
@@ -199,17 +199,20 @@ ul.breadcrumb li a:hover {
   display: -ms-flexbox;
   display: flex;
   font-family: Roboto;
+  text-align: center;
 }
 
 .content_section h3 {
-  text-align: center;
-  margin-bottom: 10px;
-  padding: 10px;
+ 
   padding-top: 20px;
+}
+.content_section p{
+  text-align: left;
+
 }
 
 .content_section .blogs {
-  background-color: yellow;
+  background-color:#FAF0CA;
   padding-right: 70px;
   padding-left: 20px;
   width: 50%;
@@ -221,10 +224,87 @@ ul.breadcrumb li a:hover {
   width: 50%;
 }
 
+.button--content{
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius:3px;
+  overflow: hidden;
+}
+
+.button--blue{
+    background-color: #0D3B66;
+
+}
+.button--yellow{
+    background-color: #F4D35E;
+    text-shadow:1px 1px 1px rgba(0,0,0,.22);
+
+}
+.left{
+  display:block;
+  text-align: left;
+
+}
+
+
+
 .events_archive_content{
   margin: auto;
   width: 60%;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.blogs-section{
+  display:flex;
+  align-items: center;
+  margin-bottom:10px;
+
+}
+.date-section{
+    margin-right:20px;
+
+}
+.date{
+  background-color: #F4D35E;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  background-color: #F4D35E;
+  border-radius: 50%
+
+  
+}
+
+.date-blue{
+  background-color: #0D3B66;
+
+}
+.date a {
+    text-decoration:none;
+    font-size:30px;
+}
+.month{
+  display:block;
+  padding-top:18px;
+   color:white;
+    font-size: 1.5rem;
+  font-weight: 300;
+  transition: opacity .33s;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .22);
+}
+.day{
+    display:block;
+     color:white;
+     font-size: 2.02rem;
+  font-weight: 700;
+
+}
+.t-left {
+  text-align: initial;
 }
 /*# sourceMappingURL=styles.css.map */

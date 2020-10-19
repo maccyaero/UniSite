@@ -1,8 +1,9 @@
 <?php get_header();?>
 <?php  
+$pageBannerImage=get_field('page_banner_background_image');
 while(have_posts()){
     the_post();?>
-    <div class="banner" style="background-image: url(images/hero-bg.png);"> <!-- Banner -->
+    <div class="banner" style="background-image:url(<?php echo $pageBannerImage['sizes']['pageBanner'] ;?>);"> <!-- Banner -->
         <h1><?php the_title();?></h1>         <!-- //Banner Heading  -->
     </div>
             

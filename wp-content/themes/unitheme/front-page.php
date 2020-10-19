@@ -5,12 +5,12 @@
         <h1>Welcome!</h1>
         <h2>We think you'll like it here</h2>
         <h3>Why dont you check out the mojhor you are interested in ?</h3>
-        <a href="<?php echo get_post_type_archive_link('program');?>" class="button blue">Find your major</a>
+        <a href="<?php echo get_post_type_archive_link('program');?>" class="button button--blue">Find your major</a>
     </div>
 
     <div class="content_section">
         <div class="events">
-            <h3>Upcoming Events</h3>
+            <h3 class="t-center">Upcoming Events</h3>
 
             <?php 
                 $today = date('Ymd');
@@ -36,27 +36,40 @@
 
                 while($homepageEvents->have_posts()){
                     $homepageEvents->the_post();?>
-                    <a href="<?php the_permalink(); ?>"><?php the_title();?></a>
-                    <span> on <?php 
-                    $eventDate = new DateTime(get_field('event_date'));
-                    echo $eventDate->format('M');
-                    echo $eventDate->format('d');
-                    
-                    
-                    
-                    ?></span>
-                    <p><?php echo wp_trim_words(get_the_content(), 25);?></p>
+                    <div class="blogs-section">
+<div class="date-section">
+  <div class="date date-blue">
+  <a href="">
+      <?php
+      $eventDate = new DateTime(get_field('event_date'));
+      ?>
+    <span class="month"><?php echo $eventDate->format('M');?></span>
+    <span class="day"><?php echo $eventDate->format('d');?></span>
+  </a>
+    
+  </div>
+</div>
+  
+  <div class="event-summary">
+    <h3 class= "t-left"><?php the_title(); ?></h3>
+    <p>
+    <?php echo wp_trim_words(get_the_content(), 25);?>
+       <a href="<?php the_permalink(); ?>">Rea more</a>
+    </p>
+    
+  </div>
+</div>
                <?php }
             
             ?>
-            <a href="<?php echo get_post_type_archive_link('uni_event');?>">View All Events</a>
+            <a href="<?php echo get_post_type_archive_link('uni_event');?>" class="button--content button--blue t-center">View All Events</a>
 
         </div>
 
         <!-- Dont forget to add the circle UI dates Links  -->
-        <div class="blogs">
+        <div class="blogs"> <!-- Blog Section  -->
         <h3>
-                From Our BLogs
+                From Our Blogs
         </h3>
         <?php 
             $homepagePosts = new WP_Query(array(
@@ -67,16 +80,34 @@
        while($homepagePosts->have_posts()){
         $homepagePosts->the_post();
            ?>
-            <a href="<?php the_permalink(); ?>"><?php the_title()?></a>
-            <p>
-            <?php 
-            echo wp_trim_words(get_the_content(), 25);
-            ?>
-            </p>
+           
+           <div class="blogs-section">
+<div class="date-section">
+  <div class="date">
+  <a href="">
+      <?php
+      $blogDate = new DateTime(get_the_date());
+      ?>
+    <span class="month"><?php echo $blogDate->format('M'); ;?></span>
+    <span class="day"><?php echo $blogDate->format('d'); ;?></span>
+  </a>
+    
+  </div>
+</div>
+  
+  <div class="event-summary">
+    <h3 class= "t-left"><?php the_title(); ?></h3>
+    <p>
+    <?php echo wp_trim_words(get_the_content(), 25);?>
+       <a href="<?php the_permalink(); ?>">Rea more</a>
+    </p>
+    
+  </div>
+</div>
             <?php
        }
        ?>
-       <a href="<?php echo site_url('/blog')?>">View All Blogs</a>
+       <a href="<?php echo site_url('/blog')?>" class="button--content button--yellow">View All Blogs</a>
 
         
         </div>
