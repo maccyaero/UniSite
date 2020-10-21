@@ -2,10 +2,11 @@
 <?php  
 while(have_posts()){
     the_post();?>
-     <div class="banner" style="background-image: url(images/hero-bg.png);">
-        <h1><?php the_title();?></h1>
-       
-            </div>
+<?php 
+
+pageBanner();
+
+?>
             
              <ul class="breadcrumb">
             <li><a href="<?php echo get_post_type_archive_link('uni_event') ;?>">Back to Events Home</a></li>

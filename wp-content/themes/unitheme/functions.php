@@ -1,5 +1,29 @@
 <?php
-
+// Get three variables, the title, subtitile , background image)
+// output html 
+function pageBanner($title=null, $subtitle=null,$image=null){
+    if(!$title){
+        $title = get_the_title();
+    }
+    if(!$subtitle){
+        $subtitle = get_field('page_banner_subtitlle');
+    }
+    if(!$image){
+        $imagearray=get_field('page_banner_background_image');
+        if($imagearray){
+            $image = $imagearray['sizes']['pageBanner'];
+        }else{
+            $image=get_theme_file_uri('/images/library-hero.jpg');
+        }
+    }
+    // var_dump($pageBannerImage['sizes']['thumbnail']);
+    ?>
+    <div class="banner" style="background-image:url(<?php echo $image ;?>);"> <!-- Banner -->
+        <h1><?php echo $title;?></h1>         <!-- //Banner Heading  -->
+        <h2><?php echo $subtitle; ?></h2>
+    </div>
+    <?php
+}
 function university_files(){
     wp_enqueue_style('font-awesome','//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
     wp_enqueue_style('google-custom-font','https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic');

@@ -1,7 +1,9 @@
 <?php get_header(); ?>
-<div class="banner">
-        <h1>Archive: Past Events</h1>
-    </div>
+<?php 
+
+pageBanner('Archive: Past Events');
+
+?>
 
         <div class="events">
             <?php 

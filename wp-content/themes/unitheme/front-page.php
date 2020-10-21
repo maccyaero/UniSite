@@ -1,12 +1,10 @@
-
-
 <?php get_header(); ?>
-<div class="banner">
-        <h1>Welcome!</h1>
-        <h2>We think you'll like it here</h2>
-        <h3>Why dont you check out the mojhor you are interested in ?</h3>
-        <a href="<?php echo get_post_type_archive_link('program');?>" class="button button--blue">Find your major</a>
-    </div>
+
+<?php 
+
+pageBanner('Welcome!','Why dont you check out the mojhor you are interested in ?');
+
+?>
 
     <div class="content_section">
         <div class="events">

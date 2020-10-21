@@ -1,11 +1,12 @@
 <?php get_header();?>
-<?php  
-$pageBannerImage=get_field('page_banner_background_image');
+<?php 
+
+
 while(have_posts()){
-    the_post();?>
-    <div class="banner" style="background-image:url(<?php echo $pageBannerImage['sizes']['pageBanner'] ;?>);"> <!-- Banner -->
-        <h1><?php the_title();?></h1>         <!-- //Banner Heading  -->
-    </div>
+    the_post();
+    pageBanner('','','https://environmentsdenver.com/wp-content/uploads/2019/07/classroom-design-denver.jpg');
+    ?>
+    
             
     <ul class="breadcrumb">         <!-- Breadcrumb Navigation -->
         <li><a href="<?php echo get_post_type_archive_link('professor') ;?>">Back to All Professors</a></li>

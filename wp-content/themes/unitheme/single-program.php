@@ -2,9 +2,11 @@
 <?php  
 while(have_posts()){
     the_post();?>
-     <div class="banner" style="background-image: url(images/hero-bg.png);"> <!-- Banner -->
-        <h1><?php the_title();?></h1>   <!-- //Banner Heading  -->
-    </div>
+     <?php 
+
+pageBanner();
+
+?>
             
     <ul class="breadcrumb">  <!-- Breadcrumb Navigation -->
         <li><a href="<?php echo site_url('/programs') ;?>">Back to Programs Home</a></li>

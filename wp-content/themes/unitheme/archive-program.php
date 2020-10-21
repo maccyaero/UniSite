@@ -1,10 +1,14 @@
 <?php get_header();?>
 
+<?php 
 
-<div class="banner" style="background-image: url(images/hero-bg.png);">
-    <h1><?php the_archive_title(); ?></h1>
+pageBanner(get_the_archive_title(),"There is something for everyone have a look around" );
+
+?>
+<!-- <div class="banner" style="background-image: url(images/hero-bg.png);">
+    <h1></h1>
     <h2>There is something for everyone have a look around</h2>
-</div>
+</div> -->
 <div class="events_archive_content">
     <?php 
         while(have_posts()){

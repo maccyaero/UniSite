@@ -96,6 +96,10 @@ a{
   font-weight: 300;
 
 }
+.banner_small{
+  font-size:700px;
+  font-weight: 300;
+}
 .banner h2{
   font-weight: 100;
   margin-bottom: 10px;

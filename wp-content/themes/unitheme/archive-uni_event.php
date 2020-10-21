@@ -1,10 +1,11 @@
 <?php get_header();?>
 
 
-<div class="banner" style="background-image: url(images/hero-bg.png);">
-    <h1><?php the_archive_title(); ?></h1>
-    <h2>Welcome to our world !</h2>
-</div>
+<?php 
+
+pageBanner(get_the_archive_title(),"" );
+
+?>
 <div class="events_archive_content">
     <?php 
         while(have_posts()){

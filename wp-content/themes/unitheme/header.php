@@ -22,7 +22,7 @@
             <ul>
                <a href="<?php echo site_url('/about-us') ?>"><li >About us</li></a>
                <a href="<?php echo get_post_type_archive_link('program') ?>"> <li>Programs</li></a>
-                <a href="<?php echo site_url('/events') ?>"><li>Events</li></a>
+                <a href="<?php echo site_url('/event') ?>"><li>Events</li></a>
                 <a href="<?php echo site_url('/campuses') ?>"><li>Campuses</li></a>
                 <a href="<?php echo site_url('/blog') ?>"><li>Blog</li></a>
                 <li><a href="" class = "button green">Login</a></li>
