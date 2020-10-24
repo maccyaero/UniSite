@@ -4,10 +4,10 @@
             $title ='';
             $subtitle ='';
             the_post();
-            pageBanner($title,$subtitle);?>
+            pageBanner($title,$subtitle,'https://images.unsplash.com/photo-1493723843671-1d655e66ac1c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80');?>
       <?php
         
-        $theParent = wp_get_post_parent_id(get_the_id());
+        $theParent = wp_get_post_parent_id(get_the_id()); 
         if($theParent){ ?>
              <ul class="breadcrumb">
             <li><a href="<?php echo get_permalink($theParent) ;?>">Back to <?php echo get_the_title($theParent);?></a></li>
