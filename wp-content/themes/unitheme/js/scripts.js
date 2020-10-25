@@ -38,6 +38,7 @@ class Search {
             this.spinningWheel.css('display', 'none');
             this.searchResultBox.css('display', 'none');
             jQuery(".search-results").css('display', 'none');
+            clearTimeout(this.timeOutLimit);
 
         } else {
             this.spinningWheel.css('display', 'block');
@@ -53,17 +54,29 @@ class Search {
     getResults() {
         this.searchFieldVal = jQuery("#search-box").val();
         // console.log(this.searchFieldVal);
-        jQuery.getJSON('http://localhost:8888/WordpressProjects/UniSite/wp-json/wp/v2/posts?search=' + this.searchFieldVal,
+        jQuery.getJSON(universityData.root_url + '/wp-json/wp/v2/posts?search=' + this.searchFieldVal,
             function(posts) {
-                jQuery('#search-results-list').html(
-                    posts.map(item => `<li><a style = "color:black;"href="${item.link}">${item.title.rendered}</a></li>`)
-                )
+                if (posts.length > 0) {
+                    jQuery('#search-results-list').html(
+
+                        posts.map(item => `<li><a style = "color:black;"href="${item.link}">${item.title.rendered}</a></li>`)
+
+
+                    )
+
+
+                } else {
+                    jQuery('#search-results-list').html(
+
+                        `<p>No results found </p>`
+
+                    )
+                }
             }
 
         );
         jQuery(".search-results").css('display', 'block');
         jQuery(".loader").css('display', 'none');
-
     }
 
 
