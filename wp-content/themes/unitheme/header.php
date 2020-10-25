@@ -65,7 +65,13 @@
  
             <div class="search-area">
                     <div class="loader"></div>
-                    <div class="search-results"><p>These Are the Results</p></div>
+                    <div class="search-results">
+                        <h3>Results: </h3>
+                        <hr>
+                        <ul id = "search-results-list">
+
+                        </ul>
+                    </div>
 
             </div>
         </div>

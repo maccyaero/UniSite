@@ -14,6 +14,8 @@ class Search {
         this.timeOutLimit;
         this.spinningWheel = jQuery(".loader");
         this.searchResultBox = jQuery(".search-results");
+        this.searchFieldVal;
+
     }
     write() {
         console.log(this.overlay);
@@ -35,9 +37,12 @@ class Search {
         if (this.searchBox.val() == "") {
             this.spinningWheel.css('display', 'none');
             this.searchResultBox.css('display', 'none');
+            jQuery(".search-results").css('display', 'none');
+
         } else {
             this.spinningWheel.css('display', 'block');
             clearTimeout(this.timeOutLimit);
+
             this.timeOutLimit = setTimeout(this.getResults, 2000);
 
         }
@@ -46,10 +51,19 @@ class Search {
 
     }
     getResults() {
+        this.searchFieldVal = jQuery("#search-box").val();
+        // console.log(this.searchFieldVal);
+        jQuery.getJSON('http://localhost:8888/WordpressProjects/UniSite/wp-json/wp/v2/posts?search=' + this.searchFieldVal,
+            function(posts) {
+                jQuery('#search-results-list').html(
+                    posts.map(item => `<li><a style = "color:black;"href="${item.link}">${item.title.rendered}</a></li>`)
+                )
+            }
+
+        );
         jQuery(".search-results").css('display', 'block');
         jQuery(".loader").css('display', 'none');
-        // jQuery.getJSON('http://localhost:8888/WordpressProjects/UniSite/wp-json/wp/v2/posts?search=pixel',
-        //     function(posts) { alert(posts[0].id) })
+
     }
 
 
